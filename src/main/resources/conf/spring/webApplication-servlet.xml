@@ -30,14 +30,14 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
 	
 	<!-- 전체 적용 
 	<mvc:interceptors>
-		<bean id="authCheckInterceptor" class="com.bluedigm.sample.interceptor.AuthCheckInterceptor"/>
+		<bean id="authCheckInterceptor" class="com.bluedigm.framework.sample.interceptor.AuthCheckInterceptor"/>
 	</mvc:interceptors>-->
 	<!-- 특정 path 지정 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:mapping path="/*/*.do" />
-			<bean id="authCheckInterceptor" class="com.bluedigm.sample.interceptor.AuthCheckInterceptor"/>
+			<bean id="authCheckInterceptor" class="com.bluedigm.framework.sample.interceptor.AuthCheckInterceptor"/>
 		</mvc:interceptor>
 	</mvc:interceptors>
 
@@ -57,12 +57,12 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" />
-		<context:exclude-filter type="regex" expression="^com\.sbsch\.cms\.[a-zA-Z\.]*\.controller.rest\.[a-zA-Z\.]*"/>
+		<context:exclude-filter type="regex" expression="^com\.bluedigm\.[a-zA-Z\.]*\.controller.rest\.[a-zA-Z\.]*"/>
 	</context:component-scan>
 
 	<!-- Pagination -->
-	<bean id="imageRenderer" class="com.bluedigm.sample.support.pagination.ImagePaginationRenderer" />
-	<bean id="textRenderer" class="com.bluedigm.sample.support.pagination.DefaultPaginationRenderer" />
+	<bean id="imageRenderer" class="com.bluedigm.framework.sample.support.pagination.ImagePaginationRenderer" />
+	<bean id="textRenderer" class="com.bluedigm.framework.sample.support.pagination.DefaultPaginationRenderer" />
 	<bean id="paginationManager" class="com.bluedigm.framework.web.ui.pagination.DefaultPaginationManager">
 		<property name="rendererType">
 			<map>

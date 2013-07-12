@@ -18,28 +18,18 @@
 		<![CDATA[
 			SELECT	/* Contact.selectContactCount | Hanwoong Lee | 2012-01-30 */
 					count(*) totcnt
-			FROM	CONTACTS
+			FROM	contacts
 		]]>
 		<where>
 			<if test="searchKeyword != null and searchKeyword != ''">
-				<![CDATA[ name like '%'||#{searchKeyword, jdbcType=VARCHAR}||'%' ]]>
+				name like '%'||#{searchKeyword}||'%'
 			</if>
 		</where>
 	</select>
 
-	<sql id="selectContactTemp">
-			(SELECT CONTACTS.*, ROW_NUMBER() OVER (ORDER BY id) R FROM CONTACTS
-		<where>
-			<if test="searchKeyword != null and searchKeyword != ''">
-				<![CDATA[ name like '%'||#{searchKeyword, jdbcType=VARCHAR}||'%' ]]>
-			</if>
-		</where>
-		)
-	</sql>
-	
 	<select id="selectContactList" parameterType="SearchContact" resultMap="contactResult">
 		<![CDATA[
-			SELECT /* Contact.selectContactList | Hanwoong Lee | 2012-01-30 */
+			SELECT	/* Contact.selectContactList | Hanwoong Lee | 2012-01-30 */
 					id,
 					name,
 					address,
@@ -48,19 +38,15 @@
 					email,
 					mobile,
 					phone
-			FROM 
-
-			(SELECT CONTACTS.*, ROW_NUMBER() OVER (ORDER BY id) R FROM CONTACTS
-							]]>
+			FROM	contacts
+		]]>
 		<where>
 			<if test="searchKeyword != null and searchKeyword != ''">
-				<![CDATA[ name like '%'||#{searchKeyword, jdbcType=VARCHAR}||'%']]>
+				name like '%'||#{searchKeyword}||'%'
 			</if>
 		</where>
-		)
-		<where>
-			<![CDATA[R BETWEEN #{firstRecordIndex, jdbcType=NUMERIC} and #{recordCountPerPage, jdbcType=NUMERIC}]]>
-		</where>
+		order by CONVERT(id,SIGNED)
+		limit #{firstRecordIndex}, #{recordCountPerPage}
 	</select>
 
 	<select id="selectContact" parameterType="integer" resultMap="contactResult">
@@ -74,17 +60,17 @@
 					email,
 					mobile,
 					phone
-			FROM	CONTACTS
+			FROM	contacts
 		]]>
 		<where>
-			<![CDATA[id = #{id, jdbcType=NUMERIC} ]]>
+				id = #{id}
 		</where>
 	</select>
 
-	<insert id="insertContact" parameterType="Contact" keyProperty="id">
+	<insert id="insertContact" parameterType="Contact" useGeneratedKeys="true" keyProperty="id">
 		<![CDATA[
 			INSERT /* Contact.insertContact | Hanwoong Lee | 2012-01-30 */ 
-			INTO CONTACTS (
+			INTO contacts (
 					  id,
 					  name,
 					  address,
@@ -98,18 +84,18 @@
 					  MOR_ID,
 					  MDF_DT
 			) VALUES (
-					  #{id, jdbcType=NUMERIC},
-					  #{name, jdbcType=VARCHAR},
-					  #{address, jdbcType=VARCHAR},
-					  #{gender, jdbcType=VARCHAR},
-					  #{dob, jdbcType=DATE},
-					  #{email, jdbcType=VARCHAR},
-					  #{mobile, jdbcType=VARCHAR},
-					  #{phone, jdbcType=VARCHAR},
-					  #{createID, jdbcType=VARCHAR},
-					  SYSDATE,
-					  #{modifyID, jdbcType=VARCHAR},
-					  SYSDATE
+					  #{id},
+					  #{name},
+					  #{address},
+					  #{gender},
+					  #{dob},
+					  #{email},
+					  #{mobile},
+					  #{phone},
+					  #{createID},
+					  NOW(),
+					  #{modifyID},
+					  NOW()
 			) 
 		]]>
 	</insert>
@@ -117,25 +103,25 @@
 	<update id="updateContact" parameterType="Contact">
 		<![CDATA[
 			UPDATE /* Contact.updateContact | Hanwoong Lee | 2012-01-30 */ 	
-				CONTACTS
-			SET		name = #{name, jdbcType=VARCHAR},
-					address = #{address, jdbcType=VARCHAR},
-					gender = #{gender, jdbcType=VARCHAR},
+				contacts
+			SET		name = #{name},
+					address = #{address},
+					gender = #{gender},
 					dob = #{dob},
-					email = #{email, jdbcType=VARCHAR},
-					mobile = #{mobile, jdbcType=VARCHAR},
-					phone = #{phone, jdbcType=VARCHAR},
-	    			MOR_ID = #{modifyID, jdbcType=VARCHAR},
-				    MDF_DT = SYSDATE
-			WHERE	id = #{id, jdbcType=NUMERIC} 
+					email = #{email},
+					mobile = #{mobile},
+					phone = #{phone},
+	    			MOR_ID = #{modifyID},
+				    MDF_DT = NOW()
+			WHERE	id = #{id}
 		]]>
 	</update>
 
 	<delete id="deleteContact" parameterType="integer">
 		<![CDATA[
 			DELETE /* Contact.deleteContact | Hanwoong Lee | 2012-01-30 */ 	
-			FROM CONTACTS     
-			WHERE	id = #{id, jdbcType=NUMERIC}
+			FROM contacts     
+			WHERE	id = #{id}
 		]]>
 	</delete>
 </mapper>

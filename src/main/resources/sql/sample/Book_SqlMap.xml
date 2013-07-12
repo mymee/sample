@@ -83,24 +83,31 @@
 	                 price,
 	                 email
 			) VALUES (
-					 #{bookId, jdbcType=NUMERIC},
-					 #{title, jdbcType=VARCHAR},
-	                 #{price, jdbcType=NUMERIC},
-	                 #{email, jdbcType=VARCHAR}
+					 #{bookId},
+					 #{title},
+	                 #{price},
+	                 #{email}
 			)
 		]]>
-
+		<selectKey keyProperty="bookId" resultType="long" order="AFTER">
+			<if test="bookId >= 0">
+				SELECT LAST_INSERT_ID()
+			</if>
+			<if test="!(bookId >= 0)">
+				SELECT #{bookId}
+			</if>
+		</selectKey>		
 	</insert>
 
 	<update id="updateBook" parameterType="Book">
 		<![CDATA[
 			UPDATE	/* Book.updateBook | Hanwoong Lee | 2012-01-30 */
 					books
-			SET		bookId = #{bookId, jdbcType=NUMERIC},
-					title = #{title, jdbcType=VARCHAR},
-					price = #{price, jdbcType=NUMERIC},
-					email = #{email, jdbcType=VARCHAR}
-			WHERE	bookId = #{bookId, jdbcType=NUMERIC}
+			SET		bookId = #{bookId},
+					title = #{title},
+					price = #{price},
+					email = #{email}
+			WHERE	bookId = #{bookId}
 		]]>
 	</update>
 

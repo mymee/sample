@@ -30,7 +30,7 @@ default-autowire="byName">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service" />
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository" />
-		<context:exclude-filter type="regex" expression="^com\.sbsch\.cms\.[a-zA-Z\.]*\.controller.web\.[a-zA-Z\.]*" />
+		<context:exclude-filter type="regex" expression="^com\.bluedigm\.[a-zA-Z\.]*\.controller.web\.[a-zA-Z\.]*" />
 	</context:component-scan>
 	<!-- Exception Resolver -->
 	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
