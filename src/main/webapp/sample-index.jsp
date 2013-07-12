@@ -16,7 +16,7 @@
 <%@ taglib prefix="decorator"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@ taglib prefix="page" uri="http://www.opensymphony.com/sitemesh/page"%>
-<%@ taglib prefix="ui" uri="http://www.Bluedigm.co.kr/ctl/ui"%>
+<%@ taglib prefix="ui" uri="http://www.Bluedigm.com/ctl/ui"%>
 <%
 	response.setHeader("Cache-Control", "no-cache");
 	response.setHeader("Pragma", "no-cache");

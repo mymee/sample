@@ -8,8 +8,8 @@
 <%@ taglib prefix="decorator"
 	uri="http://www.opensymphony.com/sitemesh/decorator"%>
 <%@ taglib prefix="page" uri="http://www.opensymphony.com/sitemesh/page"%>
-<%@ taglib prefix="ui" uri="http://www.Bluedigm.co.kr/ctl/ui"%>
-<%-- <%@ taglib prefix="code" uri="http://www.Bluedigm.co.kr/ctl/code"%> --%>
+<%@ taglib prefix="ui" uri="http://www.Bluedigm.com/ctl/ui"%>
+<%-- <%@ taglib prefix="code" uri="http://www.Bluedigm.com/ctl/code"%> --%>
 <%
 	response.setHeader("Cache-Control", "no-cache");
 	response.setHeader("Pragma", "no-cache");

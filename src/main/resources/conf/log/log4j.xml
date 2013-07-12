@@ -9,8 +9,8 @@
 		</layout>
 	</appender>
 
-	<appender name="SBSCH" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="file" value="c:/DEV/temp/logs/dev.log" />
+	<appender name="APPLICATION" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="c:/DEV/temp/logs/application.log" />
 		<param name="Append" value="true" />
 		<param name="Encoding" value="UTF-8" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
@@ -29,15 +29,15 @@
 		</layout>
 	</appender>
 
-	<category name="com.sbsch" additivity="false">
+	<category name="com.bluedigm" additivity="false">
 		<priority value="debug" />
-		<appender-ref ref="SBSCH" />
+		<appender-ref ref="APPLICATION" />
 		<appender-ref ref="CONSOLE" />
 	</category>
 
 	<category name="org.apache" additivity="false">
 		<priority value="debug" />
-		<appender-ref ref="SBSCH" />
+		<appender-ref ref="APPLICATION" />
 		<appender-ref ref="CONSOLE" />
 	</category>
 	
@@ -48,7 +48,7 @@
  
 	<category name="org.springframework" additivity="false">
 		<priority value="debug" />
-		<appender-ref ref="SBSCH" />
+		<appender-ref ref="APPLICATION" />
 		<appender-ref ref="CONSOLE" />
 	</category>
 
