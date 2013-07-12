@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="common.sample.book.dao.Contact">
+	
+	<resultMap type="Contact" id="contactResult">
+		<result property="id" column="id"/>
+		<result property="name" column="name" />
+		<result property="address" column="address" />
+		<result property="gender" column="gender" />		
+		<result property="dob" column="dob" />
+		<result property="email" column="email" />
+		<result property="mobile" column="mobile" />
+		<result property="phone" column="phone" />
+	</resultMap>
+	
+	<select id="selectContactCount" parameterType="SearchContact" resultType="int">
+		<![CDATA[
+			SELECT	/* Contact.selectContactCount | Hanwoong Lee | 2012-01-30 */
+					count(*) totcnt
+			FROM	CONTACTS
+		]]>
+		<where>
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<![CDATA[ name like '%'||#{searchKeyword, jdbcType=VARCHAR}||'%' ]]>
+			</if>
+		</where>
+	</select>
+
+	<sql id="selectContactTemp">
+			(SELECT CONTACTS.*, ROW_NUMBER() OVER (ORDER BY id) R FROM CONTACTS
+		<where>
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<![CDATA[ name like '%'||#{searchKeyword, jdbcType=VARCHAR}||'%' ]]>
+			</if>
+		</where>
+		)
+	</sql>
+	
+	<select id="selectContactList" parameterType="SearchContact" resultMap="contactResult">
+		<![CDATA[
+			SELECT /* Contact.selectContactList | Hanwoong Lee | 2012-01-30 */
+					id,
+					name,
+					address,
+					gender,
+					dob,
+					email,
+					mobile,
+					phone
+			FROM 
+
+			(SELECT CONTACTS.*, ROW_NUMBER() OVER (ORDER BY id) R FROM CONTACTS
+							]]>
+		<where>
+			<if test="searchKeyword != null and searchKeyword != ''">
+				<![CDATA[ name like '%'||#{searchKeyword, jdbcType=VARCHAR}||'%']]>
+			</if>
+		</where>
+		)
+		<where>
+			<![CDATA[R BETWEEN #{firstRecordIndex, jdbcType=NUMERIC} and #{recordCountPerPage, jdbcType=NUMERIC}]]>
+		</where>
+	</select>
+
+	<select id="selectContact" parameterType="integer" resultMap="contactResult">
+		<![CDATA[
+			SELECT	/* Contact.selectContact | Hanwoong Lee | 2012-01-30 */  
+					id,
+					name,
+					address,
+					gender,
+					dob,
+					email,
+					mobile,
+					phone
+			FROM	CONTACTS
+		]]>
+		<where>
+			<![CDATA[id = #{id, jdbcType=NUMERIC} ]]>
+		</where>
+	</select>
+
+	<insert id="insertContact" parameterType="Contact" keyProperty="id">
+		<![CDATA[
+			INSERT /* Contact.insertContact | Hanwoong Lee | 2012-01-30 */ 
+			INTO CONTACTS (
+					  id,
+					  name,
+					  address,
+					  gender,
+					  dob,
+					  email,
+					  mobile,
+					  phone,
+					  COR_ID,
+					  CRT_DT,
+					  MOR_ID,
+					  MDF_DT
+			) VALUES (
+					  #{id, jdbcType=NUMERIC},
+					  #{name, jdbcType=VARCHAR},
+					  #{address, jdbcType=VARCHAR},
+					  #{gender, jdbcType=VARCHAR},
+					  #{dob, jdbcType=DATE},
+					  #{email, jdbcType=VARCHAR},
+					  #{mobile, jdbcType=VARCHAR},
+					  #{phone, jdbcType=VARCHAR},
+					  #{createID, jdbcType=VARCHAR},
+					  SYSDATE,
+					  #{modifyID, jdbcType=VARCHAR},
+					  SYSDATE
+			) 
+		]]>
+	</insert>
+
+	<update id="updateContact" parameterType="Contact">
+		<![CDATA[
+			UPDATE /* Contact.updateContact | Hanwoong Lee | 2012-01-30 */ 	
+				CONTACTS
+			SET		name = #{name, jdbcType=VARCHAR},
+					address = #{address, jdbcType=VARCHAR},
+					gender = #{gender, jdbcType=VARCHAR},
+					dob = #{dob},
+					email = #{email, jdbcType=VARCHAR},
+					mobile = #{mobile, jdbcType=VARCHAR},
+					phone = #{phone, jdbcType=VARCHAR},
+	    			MOR_ID = #{modifyID, jdbcType=VARCHAR},
+				    MDF_DT = SYSDATE
+			WHERE	id = #{id, jdbcType=NUMERIC} 
+		]]>
+	</update>
+
+	<delete id="deleteContact" parameterType="integer">
+		<![CDATA[
+			DELETE /* Contact.deleteContact | Hanwoong Lee | 2012-01-30 */ 	
+			FROM CONTACTS     
+			WHERE	id = #{id, jdbcType=NUMERIC}
+		]]>
+	</delete>
+</mapper>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="common.sample.dao.Book">
+
+	<resultMap type="Book" id="bookResult">
+		<result property="bookId" column="bookId"/>
+		<result property="title" column="title" />
+		<result property="price" column="price" />
+		<result property="email" column="email" />
+	</resultMap>
+	
+	<resultMap type="Magazine" id="magazineResult">
+		<result property="magazineId" column="magazineId"/>
+		<result property="category" column="category" />
+		<result property="title" column="title" />
+		<result property="price" column="price" />
+	</resultMap>
+		
+	<select id="selectBookList" resultMap="bookResult">
+		<![CDATA[
+			SELECT	/* Book.selectBookList | Hanwoong Lee | 2012-01-30 */
+					bookId as bookId,
+					title as title,
+		    		price as price,
+		    		email as email
+			FROM	books
+		]]>
+	</select>
+
+	<select id="selectBook" parameterType="integer" resultMap="bookResult">
+		<![CDATA[
+			SELECT	/* Book.selectBook | Hanwoong Lee | 2012-01-30 */
+					bookId as bookId,
+					title as title,
+		    		price as price,
+		    		email as email
+			FROM	books
+		]]>
+		<where>
+			<if test="value != null">
+				bookId = #{bookId}
+			</if>
+		</where>
+	</select>
+	
+	<select id="selectBookEmail" parameterType="Book" resultMap="bookResult">
+		<![CDATA[
+			SELECT	/* Book.selectBook | Hanwoong Lee | 2012-01-30 */
+					bookId as bookId,
+					title as title,
+		    		price as price,
+		    		email as email
+			FROM	books
+		]]>
+		<where>
+			<if test="email != null">
+				email = #{email}
+			</if>
+		</where>
+	</select>
+		
+	<select id="selectMagazine" parameterType="java.util.HashMap" resultMap="magazineResult">
+		<![CDATA[
+			SELECT	/* Book.selectMagazine | Hanwoong Lee | 2012-01-30 */
+					magazineId as magazineId,
+					category as category,
+		    		title as title,
+		    		price as price
+			FROM	magazine
+		]]>
+		<where>
+			magazineId = #{magazineId} and category=#{category}
+		</where>
+	</select>	
+
+	<insert id="insertBook" parameterType="Book">
+		<![CDATA[
+			INSERT /* Book.insertBook | Hanwoong Lee | 2012-01-30 */
+			INTO 	books (
+	                 bookId,
+	                 title,
+	                 price,
+	                 email
+			) VALUES (
+					 #{bookId, jdbcType=NUMERIC},
+					 #{title, jdbcType=VARCHAR},
+	                 #{price, jdbcType=NUMERIC},
+	                 #{email, jdbcType=VARCHAR}
+			)
+		]]>
+
+	</insert>
+
+	<update id="updateBook" parameterType="Book">
+		<![CDATA[
+			UPDATE	/* Book.updateBook | Hanwoong Lee | 2012-01-30 */
+					books
+			SET		bookId = #{bookId, jdbcType=NUMERIC},
+					title = #{title, jdbcType=VARCHAR},
+					price = #{price, jdbcType=NUMERIC},
+					email = #{email, jdbcType=VARCHAR}
+			WHERE	bookId = #{bookId, jdbcType=NUMERIC}
+		]]>
+	</update>
+
+	<delete id="deleteBook" parameterType="integer">
+		<![CDATA[
+			DELETE /* Book.deleteBook | Hanwoong Lee | 2012-01-30 */	
+			FROM books     
+			WHERE	bookId = #{bookId}
+		]]>
+	</delete>
+</mapper>

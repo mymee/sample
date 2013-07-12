@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/views/decorators">
+	<excludes>
+	    <pattern>/sample/*.do</pattern>
+		<pattern>/index.do</pattern>
+	</excludes>
+	<decorator name="main" page="mainLayer.jsp">
+		<pattern>*.do</pattern>
+	</decorator>
+
+	<decorator name="_top" page="main/topPage.jsp" />
+	<decorator name="_left" page="main/leftPage.jsp" />
+	<decorator name="_bottom" page="main/bottomPage.jsp" />
+</decorators>

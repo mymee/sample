@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//LOG4J//DTD LOG4J//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- Default -->
+	<!-- Console view -->
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%C{1}.%M(%L) %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="SBSCH" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/data/jboss/logs/dev.log" />
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %p - %C{1}.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="SQL" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/data/jboss/logs/sql.log" />
+		<param name="Append" value="true" />
+		<param name="Encoding" value="UTF-8" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%t] %p - %C{1}.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+
+	<category name="com.sbsch" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="SBSCH" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="org.apache" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="SBSCH" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+	
+	<category name="org.codehaus" additivity="false">
+		<priority value="info" />
+		<appender-ref ref="CONSOLE" />
+	</category>	
+ 
+	<category name="org.springframework" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="SBSCH" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="com.mybatis" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<category name="java.sql" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+	
+    <!-- log SQL (pre-execution) plus exceptions caused by SQL -->
+	<category name="jdbc.sqlonly" additivity="false">
+		<priority value="warn" />
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<!-- log SQL with timing information, post execution -->
+	<category name="jdbc.sqltiming" additivity="false">
+		<priority value="warn" />
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<!-- only use the two logs below to trace ALL JDBC information,
+		NOTE:  This can be very voluminous!  -->
+	<!-- log all jdbc calls except ResultSet calls -->
+	<category name="jdbc.audit" additivity="false">
+		<priority value="warn" />
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+    <category name="jdbc.resultsettable" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE" />
+    </category>
+    
+	<!-- log the jdbc ResultSet calls -->
+	<category name="jdbc.resultset" additivity="false">
+		<priority value="warn" />
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+
+	<!-- this log is for internal debugging of log4jdbc, itself -->
+	<!-- debug logging for log4jdbc itself -->
+	<category name="log4jdbc.debug" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="SQL" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+	
+	<!-- ehCache logging -->
+	<category name="net.sf.ehcache" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+	<category name="net.sf.ehcache.config" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+	<category name="net.sf.ehcache.distribution" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+	<category name="net.sf.ehcache.code" additivity="false">
+		<priority value="debug" />
+		<appender-ref ref="CONSOLE" />
+	</category>
+	
+	<root>
+		<priority value="debug"></priority>
+		<appender-ref ref="CONSOLE" />
+	</root>
+</log4j:configuration>
