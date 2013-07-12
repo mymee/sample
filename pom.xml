@@ -146,22 +146,6 @@
 					</connectors>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.1.1.Final</version>
-				<configuration>
-					<hostname>localhost</hostname>
-					<port>9999</port>
-					<filename>${project.build.finalName}.${project.packaging}</filename>
-					<webModule>
-						<groupId>${project.groupId}</groupId>
-						<artifactId>${project.artifactId}</artifactId>
-						<contextRoot>/</contextRoot>
-					</webModule>
-				</configuration>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>

@@ -5,39 +5,39 @@
 	<!-- Console view -->
 	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%C{1}.%M(%L) %m%n" />
+			<param name="ConversionPattern" value="%d [%t] %p - %C{1}.%M(%L) | %m%n" />
 		</layout>
 	</appender>
 
-	<appender name="SBSCH" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="file" value="/data/jboss/logs/dev.log" />
+	<appender name="APPLICATION" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="file" value="/data/logs/application.log" />
 		<param name="Append" value="true" />
 		<param name="Encoding" value="UTF-8" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d [%t] %p - %C{1}.%M(%L) | %m%n" />
+			<param name="ConversionPattern" value="%5p [%d{HH:mm:ss}] %m%n" />
 		</layout>
 	</appender>
 
 	<appender name="SQL" class="org.apache.log4j.DailyRollingFileAppender">
-		<param name="file" value="/data/jboss/logs/sql.log" />
+		<param name="file" value="/data/logs/sql.log" />
 		<param name="Append" value="true" />
 		<param name="Encoding" value="UTF-8" />
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d [%t] %p - %C{1}.%M(%L) | %m%n" />
+			<param name="ConversionPattern" value="%5p [%d{HH:mm:ss}] %m%n" />
 		</layout>
 	</appender>
 
-	<category name="com.sbsch" additivity="false">
+	<category name="com.bluedigm" additivity="false">
 		<priority value="debug" />
-		<appender-ref ref="SBSCH" />
+		<appender-ref ref="APPLICATION" />
 		<appender-ref ref="CONSOLE" />
 	</category>
 
 	<category name="org.apache" additivity="false">
 		<priority value="debug" />
-		<appender-ref ref="SBSCH" />
+		<appender-ref ref="APPLICATION" />
 		<appender-ref ref="CONSOLE" />
 	</category>
 	
@@ -48,7 +48,7 @@
  
 	<category name="org.springframework" additivity="false">
 		<priority value="debug" />
-		<appender-ref ref="SBSCH" />
+		<appender-ref ref="APPLICATION" />
 		<appender-ref ref="CONSOLE" />
 	</category>
 

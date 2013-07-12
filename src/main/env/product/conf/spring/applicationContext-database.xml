@@ -28,7 +28,7 @@ default-autowire="byName">
 	<!-- @Service단에서 Transaction 처리도 함께 해주기 위해 transaction manager의 order는 2로 내려준다. -->
 	<tx:annotation-driven proxy-target-class="true"	order="2" />
 	
-	<!-- DBCP를 이용한 DataSource 설정
+	<!-- DBCP를 이용한 DataSource 설정-->
 	<bean id="defaultDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="${jdbc.driverClass}" />
 		<property name="url" value="${jdbc.url}" />
@@ -49,7 +49,7 @@ default-autowire="byName">
 		<property name="minEvictableIdleTimeMillis" value="${jdbc.minEvictableIdleTimeMillis}" />
 		<property name="validationQueryTimeout" value="${jdbc.validationQueryTimeout}" />
 		<property name="validationQuery" value="${jdbc.validationQuery}" />
-	</bean> -->
+	</bean> 
 
 
 	<!-- 멀티 Datasource 설정 
@@ -99,10 +99,10 @@ default-autowire="byName">
 		<property name="validationQuery" value="${second.jdbc.validationQuery}" />  		
 	</bean> -->
 
-	<!-- JNDI를 이용한 DataSource 설정-->
+	<!-- JNDI를 이용한 DataSource 설정
 	<bean id="defaultDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
-		<property name="jndiName" value="java:/jdbc/SBSUSER" />
-	</bean> 
+		<property name="jndiName" value="java:/jdbc/JNDI" />
+	</bean> -->
 
 	<!-- 멀티 Datasource 설정 
 	<bean id="firstDataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
