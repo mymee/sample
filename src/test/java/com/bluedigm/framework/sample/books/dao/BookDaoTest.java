@@ -1,4 +1,4 @@
-package com.sbsch.cms.sample.books.dao;
+package com.bluedigm.framework.sample.books.dao;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;

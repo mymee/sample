@@ -38,7 +38,7 @@ public class BookServiceImpl implements BookService {
 	private BookDao bookDao;
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.service.BookService#setBookDao(com.sbsch.cms.sample.books.dao.BookDao)
+	 * @see com.bluedigm.sample.books.service.BookService#setBookDao(com.bluedigm.sample.books.dao.BookDao)
 	 */
 	@Autowired
 	public void setBookDao(BookDao bookDao) {
@@ -50,7 +50,7 @@ public class BookServiceImpl implements BookService {
 	private MagazineDao magazineDao;
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.service.BookService#createBook(com.sbsch.cms.sample.books.model.Book)
+	 * @see com.bluedigm.sample.books.service.BookService#createBook(com.bluedigm.sample.books.model.Book)
 	 */
 	@Override
 	public void createBook(Book book) {
@@ -58,7 +58,7 @@ public class BookServiceImpl implements BookService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.service.BookService#modifyBook(com.sbsch.cms.sample.books.model.Book)
+	 * @see com.bluedigm.sample.books.service.BookService#modifyBook(com.bluedigm.sample.books.model.Book)
 	 */
 	@Override
 	@CachePut(value = "books", key = "#book.bookId")
@@ -67,7 +67,7 @@ public class BookServiceImpl implements BookService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.service.BookService#removeBook(long)
+	 * @see com.bluedigm.sample.books.service.BookService#removeBook(long)
 	 */
 	@Override
 	@CacheEvict(value = "books", key = "#key")	
@@ -76,7 +76,7 @@ public class BookServiceImpl implements BookService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.service.BookService#getBook(long)
+	 * @see com.bluedigm.sample.books.service.BookService#getBook(long)
 	 */
 	@Override
 	@Cacheable(value = "books", key = "#key")
@@ -86,7 +86,7 @@ public class BookServiceImpl implements BookService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.service.BookService#getBook(com.sbsch.cms.sample.books.model.Book)
+	 * @see com.bluedigm.sample.books.service.BookService#getBook(com.bluedigm.sample.books.model.Book)
 	 */
 	@Override
 	public List<Book> getBook(Book book) {
@@ -95,7 +95,7 @@ public class BookServiceImpl implements BookService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.service.BookService#getBookList()
+	 * @see com.bluedigm.sample.books.service.BookService#getBookList()
 	 */
 	@Override
 	public List<Book> getBookList() {
@@ -103,7 +103,7 @@ public class BookServiceImpl implements BookService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.service.BookService#getMagazine(java.lang.Integer, java.lang.String)
+	 * @see com.bluedigm.sample.books.service.BookService#getMagazine(java.lang.Integer, java.lang.String)
 	 */
 	@Override
 	public Magazine getMagazine(Integer magazineId, String category) {

@@ -1,4 +1,4 @@
-package com.sbsch.cms.sample.contact.service;
+package com.bluedigm.framework.sample.contact.service;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;

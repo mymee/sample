@@ -25,7 +25,7 @@ import com.bluedigm.framework.dao.impl.GenericDaoImpl;
 public class MagazineDaoImpl extends GenericDaoImpl<Magazine, HashMap<String, Object>> implements MagazineDao {
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.dao.MagazineDao#selectMagazine(java.lang.Integer, java.lang.String)
+	 * @see com.bluedigm.sample.books.dao.MagazineDao#selectMagazine(java.lang.Integer, java.lang.String)
 	 */
 	@Override
 	public Magazine selectMagazine(Integer primaryKey, String category) {

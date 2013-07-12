@@ -13,7 +13,7 @@ import com.bluedigm.framework.web.ui.pagination.PaginationInfo;
 
 /**
  * <pre>
- * com.sbsch.cms.sample.support.pagination
+ * com.bluedigm.sample.support.pagination
  * 		|_DefaultPaginationRenderer.java
  * TODO Javadoc주석작성
  * </pre>

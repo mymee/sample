@@ -24,7 +24,7 @@ import org.jasypt.util.text.StrongTextEncryptor;
 
 /**
  * <pre>
- * com.sbsch.cms.sample.crypto
+ * com.bluedigm.sample.crypto
  * 		|_JasyptSample.java
  * Jasypt Lib Sample
  * </pre>

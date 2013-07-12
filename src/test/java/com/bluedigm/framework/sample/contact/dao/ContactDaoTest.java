@@ -1,4 +1,4 @@
-package com.sbsch.cms.sample.contact.dao;
+package com.bluedigm.framework.sample.contact.dao;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;

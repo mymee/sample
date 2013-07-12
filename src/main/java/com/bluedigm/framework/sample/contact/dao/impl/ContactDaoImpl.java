@@ -28,7 +28,7 @@ public class ContactDaoImpl extends GenericDaoImpl<Contact, Integer> implements 
 
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.dao.ContactDao#insertContact(com.sbsch.cms.sample.contact.model.Contact)
+	 * @see com.bluedigm.sample.contact.dao.ContactDao#insertContact(com.bluedigm.sample.contact.model.Contact)
 	 */
 	@Override
 	public int insertContact(Contact contact) {
@@ -37,7 +37,7 @@ public class ContactDaoImpl extends GenericDaoImpl<Contact, Integer> implements 
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.dao.ContactDao#updateContact(com.sbsch.cms.sample.contact.model.Contact)
+	 * @see com.bluedigm.sample.contact.dao.ContactDao#updateContact(com.bluedigm.sample.contact.model.Contact)
 	 */
 	@Override
 	public int updateContact(Contact contact) {
@@ -47,7 +47,7 @@ public class ContactDaoImpl extends GenericDaoImpl<Contact, Integer> implements 
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.dao.ContactDao#deleteContact(java.lang.Integer)
+	 * @see com.bluedigm.sample.contact.dao.ContactDao#deleteContact(java.lang.Integer)
 	 */
 	@Override
 	public int deleteContact(Integer id) {
@@ -56,7 +56,7 @@ public class ContactDaoImpl extends GenericDaoImpl<Contact, Integer> implements 
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.dao.ContactDao#selectContact(java.lang.Integer)
+	 * @see com.bluedigm.sample.contact.dao.ContactDao#selectContact(java.lang.Integer)
 	 */
 	@Override
 	public Contact selectContact(Integer id) {
@@ -69,7 +69,7 @@ public class ContactDaoImpl extends GenericDaoImpl<Contact, Integer> implements 
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.dao.ContactDao#selectContactList(com.sbsch.cms.sample.contact.model.SearchContact)
+	 * @see com.bluedigm.sample.contact.dao.ContactDao#selectContactList(com.bluedigm.sample.contact.model.SearchContact)
 	 */
 	@Override
 	public List<Contact> selectContactList(SearchContact searchContact) {
@@ -80,7 +80,7 @@ public class ContactDaoImpl extends GenericDaoImpl<Contact, Integer> implements 
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.dao.ContactDao#selectContactCount(com.sbsch.cms.sample.contact.model.SearchContact)
+	 * @see com.bluedigm.sample.contact.dao.ContactDao#selectContactCount(com.bluedigm.sample.contact.model.SearchContact)
 	 */
 	@Override
 	public int selectContactCount(SearchContact searchContact) {
@@ -91,7 +91,7 @@ public class ContactDaoImpl extends GenericDaoImpl<Contact, Integer> implements 
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.dao.ContactDao#selectContactList(java.lang.String)
+	 * @see com.bluedigm.sample.contact.dao.ContactDao#selectContactList(java.lang.String)
 	 */
 	@Override
 	public List<Contact> selectContactList(String name) {

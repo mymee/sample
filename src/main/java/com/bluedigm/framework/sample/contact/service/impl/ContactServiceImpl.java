@@ -42,7 +42,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.service.ContactService#setContactDao(com.sbsch.cms.sample.contact.dao.ContactDao)
+	 * @see com.bluedigm.sample.contact.service.ContactService#setContactDao(com.bluedigm.sample.contact.dao.ContactDao)
 	 */
 	@Autowired
 	public void setContactDao(ContactDao contactDao) {
@@ -57,7 +57,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.service.ContactService#createContact(com.sbsch.cms.sample.contact.model.Contact)
+	 * @see com.bluedigm.sample.contact.service.ContactService#createContact(com.bluedigm.sample.contact.model.Contact)
 	 */
 	@Override
 	@Transactional
@@ -66,7 +66,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.service.ContactService#updateContact(com.sbsch.cms.sample.contact.model.Contact)
+	 * @see com.bluedigm.sample.contact.service.ContactService#updateContact(com.bluedigm.sample.contact.model.Contact)
 	 */
 	@Override
 	@Transactional
@@ -76,7 +76,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.service.ContactService#deleteContact(java.lang.Integer)
+	 * @see com.bluedigm.sample.contact.service.ContactService#deleteContact(java.lang.Integer)
 	 */
 	@Override
 	@Transactional
@@ -86,7 +86,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.service.ContactService#getContact(java.lang.Integer)
+	 * @see com.bluedigm.sample.contact.service.ContactService#getContact(java.lang.Integer)
 	 */
 	@Override
 	@Cacheable(value = "contact", key = "#id")
@@ -95,7 +95,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.service.ContactService#getContacts(com.sbsch.cms.sample.contact.model.SearchContact)
+	 * @see com.bluedigm.sample.contact.service.ContactService#getContacts(com.bluedigm.sample.contact.model.SearchContact)
 	 */
 	@Override
 	public List<Contact> getContacts(SearchContact searchContact) {
@@ -103,7 +103,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.service.ContactService#getContactsCount(com.sbsch.cms.sample.contact.model.SearchContact)
+	 * @see com.bluedigm.sample.contact.service.ContactService#getContactsCount(com.bluedigm.sample.contact.model.SearchContact)
 	 */
 	@Override
 	public int getContactsCount(SearchContact searchContact) {
@@ -111,7 +111,7 @@ public class ContactServiceImpl implements ContactService {
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.contact.service.ContactService#getContacts(java.lang.String)
+	 * @see com.bluedigm.sample.contact.service.ContactService#getContacts(java.lang.String)
 	 */
 	@Override
 	public List<Contact> getContacts(String name) {

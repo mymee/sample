@@ -1,4 +1,4 @@
-package com.sbsch.cms.sample.books.service;
+package com.bluedigm.framework.sample.books.service;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;

@@ -11,7 +11,7 @@ package com.bluedigm.framework.sample.support.pagination;
 
 /**
  * <pre>
- * com.sbsch.cms.sample.support.pagination
+ * com.bluedigm.sample.support.pagination
  * 		|_ImagePaginationRenderer.java
  * TODO Javadoc주석작성
  * </pre>

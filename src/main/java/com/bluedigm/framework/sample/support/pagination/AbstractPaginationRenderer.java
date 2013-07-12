@@ -16,7 +16,7 @@ import com.bluedigm.framework.web.ui.pagination.PaginationRenderer;
 
 /**
  * <pre>
- * com.sbsch.cms.sample.support.pagination
+ * com.bluedigm.sample.support.pagination
  * 		|_AbstractPaginationRenderer.java
  * 리스트화면 페이지 네비게이션 처리
  * </pre>

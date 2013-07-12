@@ -29,7 +29,7 @@
 		</layout>
 	</appender>
 
-	<category name="com.sbsch.cms" additivity="false">
+	<category name="com.bluedigm" additivity="false">
 		<priority value="debug" />
 		<appender-ref ref="SBSCH" />
 		<appender-ref ref="CONSOLE" />

@@ -1,4 +1,4 @@
-package com.sbsch.cms.sample.contact.controller.web;
+package com.bluedigm.framework.sample.contact.controller.web;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;

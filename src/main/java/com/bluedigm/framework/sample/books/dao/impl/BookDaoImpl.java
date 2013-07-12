@@ -27,7 +27,7 @@ import com.bluedigm.framework.dao.impl.GenericDaoImpl;
 public class BookDaoImpl extends GenericDaoImpl<Book, BigInteger> implements BookDao {
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.dao.BookDao#selectBook(long)
+	 * @see com.bluedigm.sample.books.dao.BookDao#selectBook(long)
 	 */
 	@Override
 	public Book selectBook(long key) {
@@ -38,7 +38,7 @@ public class BookDaoImpl extends GenericDaoImpl<Book, BigInteger> implements Boo
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.dao.BookDao#selectBook(com.sbsch.cms.sample.books.model.Book)
+	 * @see com.bluedigm.sample.books.dao.BookDao#selectBook(com.bluedigm.sample.books.model.Book)
 	 */
 	@Override
 	public List<Book> selectBook(Book book){
@@ -48,7 +48,7 @@ public class BookDaoImpl extends GenericDaoImpl<Book, BigInteger> implements Boo
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.dao.BookDao#selectBookList()
+	 * @see com.bluedigm.sample.books.dao.BookDao#selectBookList()
 	 */
 	@Override
 	public List<Book> selectBookList() {
@@ -58,7 +58,7 @@ public class BookDaoImpl extends GenericDaoImpl<Book, BigInteger> implements Boo
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.dao.BookDao#insertBook(com.sbsch.cms.sample.books.model.Book)
+	 * @see com.bluedigm.sample.books.dao.BookDao#insertBook(com.bluedigm.sample.books.model.Book)
 	 */
 	@Override
 	public void insertBook(Book book) {
@@ -67,7 +67,7 @@ public class BookDaoImpl extends GenericDaoImpl<Book, BigInteger> implements Boo
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.dao.BookDao#deleteBook(long)
+	 * @see com.bluedigm.sample.books.dao.BookDao#deleteBook(long)
 	 */
 	@Override
 	public void deleteBook(long key) {
@@ -76,7 +76,7 @@ public class BookDaoImpl extends GenericDaoImpl<Book, BigInteger> implements Boo
 	}
 
 	/* (non-Javadoc)
-	 * @see com.sbsch.cms.sample.books.dao.BookDao#updateBook(com.sbsch.cms.sample.books.model.Book)
+	 * @see com.bluedigm.sample.books.dao.BookDao#updateBook(com.bluedigm.sample.books.model.Book)
 	 */
 	@Override
 	public void updateBook(Book book) {
