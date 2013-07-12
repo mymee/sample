@@ -3,6 +3,7 @@ package com.sbsch.cms.sample.contact.service;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 import static org.hamcrest.CoreMatchers.*;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -12,12 +13,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.dao.EmptyResultDataAccessException;
 
-import com.sbsch.cms.framework.testing.WebBaseTestCase;
-import com.sbsch.cms.sample.contact.dao.ContactDao;
-import com.sbsch.cms.sample.contact.model.Contact;
-import com.sbsch.cms.sample.contact.model.SearchContact;
-import com.sbsch.cms.sample.contact.service.ContactService;
-import com.sbsch.cms.sample.contact.service.impl.ContactServiceImpl;
+import com.bluedigm.framework.sample.contact.dao.ContactDao;
+import com.bluedigm.framework.sample.contact.model.Contact;
+import com.bluedigm.framework.sample.contact.model.SearchContact;
+import com.bluedigm.framework.sample.contact.service.ContactService;
+import com.bluedigm.framework.sample.contact.service.impl.ContactServiceImpl;
+import com.bluedigm.framework.testing.WebBaseTestCase;
 
 
 /**

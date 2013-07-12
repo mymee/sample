@@ -7,9 +7,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sbsch.cms.framework.testing.RestBaseTestCase;
-import com.sbsch.cms.sample.books.model.Book;
-import com.sbsch.cms.sample.books.service.BookService;
+import com.bluedigm.framework.sample.books.model.Book;
+import com.bluedigm.framework.sample.books.service.BookService;
+import com.bluedigm.framework.testing.RestBaseTestCase;
 
 /**
  * Book Service TestUnit

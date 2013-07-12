@@ -9,9 +9,9 @@ import java.util.Date;
 
 import org.junit.Ignore;
 
+import com.bluedigm.framework.sample.contact.model.Contact;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sbsch.cms.framework.testing.WebBaseTestCase;
-import com.sbsch.cms.sample.contact.model.Contact;
+import com.bluedigm.framework.testing.WebBaseTestCase;
 
 
 /**

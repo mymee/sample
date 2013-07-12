@@ -6,16 +6,18 @@ import static org.hamcrest.CoreMatchers.*;
 import java.util.Date;
 
 
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 
 
-import com.sbsch.cms.framework.testing.WebBaseTestCase;
-import com.sbsch.cms.sample.contact.dao.ContactDao;
-import com.sbsch.cms.sample.contact.model.Contact;
-import com.sbsch.cms.sample.contact.model.SearchContact;
+
+import com.bluedigm.framework.sample.contact.dao.ContactDao;
+import com.bluedigm.framework.sample.contact.model.Contact;
+import com.bluedigm.framework.sample.contact.model.SearchContact;
+import com.bluedigm.framework.testing.WebBaseTestCase;
 
 
 /**

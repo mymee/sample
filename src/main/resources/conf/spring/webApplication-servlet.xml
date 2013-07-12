@@ -45,7 +45,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
 	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
-				<prop key="com.sbsch.cms.framework.exception.ApplicationException">error/applicationException</prop>
+				<prop key="com.bluedigm.framework.exception.ApplicationException">error/applicationException</prop>
 			</props>
 		</property>
 		<property name="exceptionAttribute" value="exception" />
@@ -63,7 +63,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"
 	<!-- Pagination -->
 	<bean id="imageRenderer" class="com.sbsch.cms.sample.support.pagination.ImagePaginationRenderer" />
 	<bean id="textRenderer" class="com.sbsch.cms.sample.support.pagination.DefaultPaginationRenderer" />
-	<bean id="paginationManager" class="com.sbsch.cms.framework.web.ui.pagination.DefaultPaginationManager">
+	<bean id="paginationManager" class="com.bluedigm.framework.web.ui.pagination.DefaultPaginationManager">
 		<property name="rendererType">
 			<map>
 				<entry key="image" value-ref="imageRenderer" />

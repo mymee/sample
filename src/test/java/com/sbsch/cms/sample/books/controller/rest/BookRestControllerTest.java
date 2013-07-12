@@ -24,10 +24,10 @@ import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 
+import com.bluedigm.framework.sample.books.model.Book;
+import com.bluedigm.framework.sample.books.model.Books;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sbsch.cms.framework.testing.RestBaseTestCase;
-import com.sbsch.cms.sample.books.model.Book;
-import com.sbsch.cms.sample.books.model.Books;
+import com.bluedigm.framework.testing.RestBaseTestCase;
 
 /**
  * Book Rest TestUnit

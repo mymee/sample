@@ -36,7 +36,7 @@ default-autowire="byName">
 	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
-				<prop key="com.sbsch.cms.framework.exception.ApplicationException">error/applicationException</prop>
+				<prop key="com.bluedigm.framework.exception.ApplicationException">error/applicationException</prop>
 			</props>
 		</property>
 		<property name="exceptionAttribute" value="exception" />

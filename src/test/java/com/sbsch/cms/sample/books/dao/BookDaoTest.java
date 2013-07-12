@@ -2,13 +2,14 @@ package com.sbsch.cms.sample.books.dao;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.sbsch.cms.framework.testing.RestBaseTestCase;
-import com.sbsch.cms.sample.books.dao.BookDao;
-import com.sbsch.cms.sample.books.model.Book;
+import com.bluedigm.framework.sample.books.dao.BookDao;
+import com.bluedigm.framework.sample.books.model.Book;
+import com.bluedigm.framework.testing.RestBaseTestCase;
 
 /**
  * Book Dao TestUnit

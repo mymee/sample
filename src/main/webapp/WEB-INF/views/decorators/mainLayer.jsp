@@ -11,7 +11,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
 <head>
-<title><decorator:title default="SBSContentsHub" /></title>
+<title><decorator:title default="Bluedigm" /></title>
 <!-- Common CSS -->
 <link href="<%=request.getContextPath()%>/resources/css/common.css"	rel="stylesheet" type="text/css"/>
 <!-- jQuery CSS -->
