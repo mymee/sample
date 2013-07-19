@@ -28,14 +28,14 @@ public class SendMailSample {
 		//mailInfo.setHost("192.168.10.52");
 		//mailInfo.setUserName("test");
 		//mailInfo.setPassword("test");				
-		mailInfo.setHost("123.123.123.123");
+		mailInfo.setHost("211.33.172.34");
 		//mailInfo.setUserName("webmaster");
 		//mailInfo.setPassword("webmaster");
-		mailInfo.setUserName("test");
-		mailInfo.setPassword("test");		
+		//mailInfo.setUserName("test");
+		//mailInfo.setPassword("test");		
 		
 	
-		mailInfo.setFrom("webmaster@nate.com");
+		mailInfo.setFrom("webmaster@devcenter.com");
 		String[] to = new String[] { "test@test.com","test1@test.com" };
 		mailInfo.setTo(to);
 		mailInfo.setSubject("Mail Test Subject !!");
